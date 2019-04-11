@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="button" value="显示效果" id="btn">
+
+<div id="div1">
+    <p>哈哈哈，像个脑残</p>
+    <p>哈哈哈，像个脑残</p>
+    <p>哈哈哈，像个脑残</p>
+    <p>哈哈哈，像个脑残</p>
+    <p>哈哈哈，像个脑残</p>
+</div>
+
+<div>
+    <p>哈哈哈，像个脑残</p>
+    <p>哈哈哈，像个脑残</p>
+    <p>哈哈哈，像个脑残</p>
+    <p>哈哈哈，像个脑残</p>
+    <p>哈哈哈，像个脑残</p>
+</div>
+<script>
+
+    //根据id获取按钮，注册点击事件，添加事件处理函数
+
+
+    //document.getElementsByTagName("标签名字");
+    //返回是一个伪数组
+    document.getElementById("btn")
+        .onclick=function () {
+        //根据标签名字获取标签
+        var pObjs=document.getElementById("div1").getElementsByTagName("p");
+        for (let i = 0; i < pObjs.length; i++) {
+            pObjs[i].innerText="222";
+        }
+    }
+
+</script>
+</body>
+</html>

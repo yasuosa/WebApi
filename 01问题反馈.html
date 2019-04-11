@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function MySort() {
+        this.sort=function (arr) {
+            var temp;
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr.length-1-i; j++) {
+                    if(arr[j]>arr[j+1]){
+                        temp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=temp;
+                    }
+                }
+            }
+            // return arr;
+        };
+    }
+
+
+    var arr=[1,4,7,2,5,8,3,6,9];
+    var mysort=new MySort();
+    mysort.sort(arr);
+    console.log(arr);
+    arr.splice(0,1);
+    console.log(arr);
+
+
+    var dt=new Date();
+    console.log(dt.valueOf());
+
+    var dt2=new Date(dt.valueOf());
+    console.log(dt2);
+</script>
+
+</body>
+</html>

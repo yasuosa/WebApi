@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="button" value="设置p的内容" id="btn">
+<p id="p1"></p>
+
+<script>
+
+    var p1=document.getElementById("p1");
+    document.getElementById("btn")
+    .onclick=function () {
+        //凡是成对的标签 都可以使用innerText这个方法
+        p1.innerText="我是你一个p";
+    }
+</script>
+
+</body>
+</html>
