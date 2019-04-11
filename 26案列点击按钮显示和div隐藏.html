@@ -19,9 +19,15 @@
     my$("btn")
     .onclick
     =function () {
-        console.log("11");
+        if(this.value=='隐藏'){
+            my$("div").style.display="none";
+            this.value='显示';
+        }else {
+            my$("div").style.display="block";
+            this.value='隐藏';
+        }
         // my$("div").style.display="none";
-        my$("div").style.visibility="hidden";
+        // my$("div").style.visibility=;
     }
 </script>
 

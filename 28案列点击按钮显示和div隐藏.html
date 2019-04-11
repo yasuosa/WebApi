@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style type="text/css">
-        .map{
+        div{
            width: 300px;
             height: 200px;
             background-color: pink;
         }
+        .cls{
+            display: none;
+        }
+
+
     </style>
 </head>
 <body>
 <input type="button" value="隐藏" id="btn">
-<div id="div"  class="map"></div>
+<div id="div" ></div>
 <script src="common.js"></script>
 <script>
     my$("btn")
     .onclick
     =function () {
-        console.log("11");
+        my$("div").className=my$("div").className!="cls"?"cls":"";
         // my$("div").style.display="none";
-        my$("div").style.visibility="hidden";
+        // my$("div").style.visibility=;
     }
 </script>
 

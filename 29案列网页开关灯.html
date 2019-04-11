@@ -1,0 +1,23 @@
+<!DOCTYPE >
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .cls{
+            background-color: black;
+        }
+    </style>
+</head>
+<body >
+<input type="button" id="btn" value="关灯">
+<script src="common.js"></script>
+<script >
+    my$("btn").onclick=function () {
+        this.value=document.body.className!="cls"?"开灯":"关灯";
+        document.body.className=document.body.className!="cls"?"cls":"";
+
+    }
+</script>
+</body>
+</html>
