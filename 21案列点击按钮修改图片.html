@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="button" value="修改图片" id="btn">
+<img src="images/icon1.jpg" alt="" id="img">
+<script>
+    my$("btn")
+    .onclick=function () {
+        my$("img").src="images/icon3.jpg";
+    }
+
+    function my$(id) {
+        return document.getElementById(id);
+    }
+</script>
+
+</body>
+</html>

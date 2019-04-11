@@ -1,0 +1,46 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="点菜 " id="btn">
+<select name="" id="ss">
+    <option value="1">油炸榴莲</option>
+    <option value="2" id="pp">爆炒臭豆腐</option>
+    <option value="3">红烧猪蹄</option>
+    <option value="4">凉拌黄瓜</option>
+</select>
+<script src="common.js"></script>
+<script>
+    my$("btn")
+    .onclick=function () {
+        my$("pp").selected=true;
+    }
+</script>
+
+
+<!--//文本域-->
+<!--disabled相对于安卓的不可点击-->
+<textarea name="" id="tt" cols="30" rows="10" readonly>
+    某人问智者
+    大师：您觉得怎么做才是最快乐的
+    回答说：不要和愚者辩论
+    这个人说：我不这么认为
+    大师说：你说的对
+</textarea>
+<input value="22" id="btn2" type="button">
+
+<script>
+    // disabled===>禁用
+    //html 中属性和值是自己的，并且只有一个，可以写自己
+    //readonly只读
+
+    my$("btn2").onclick=function () {
+        //推荐用value 因为是表单标签
+        my$("tt").value="333";
+    }
+</script>
+</body>
+</html>

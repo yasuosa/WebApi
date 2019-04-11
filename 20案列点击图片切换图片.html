@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <style type="text/css">
+        /*img{*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<a  href="images/icon1.jpg" id="a">
+    <img src="images/icon2.JPG" id="img" alt="">
+</a>
+
+<script >
+    document.getElementById("img")
+    .onclick=function () {
+        this.src=document.getElementById("a").href;
+        return false;
+    }
+</script>
+</body>
+</html>
