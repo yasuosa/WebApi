@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="显示效果" id="btn">
+<input type="text" value="你好" name="name1">
+<input type="text" value="你好" name="name2">
+<input type="text" value="你好" name="name1">
+<input type="text" value="你好" name="name3">
+<input type="text" value="你好" name="name1">
+<input type="text" value="你好" name="name1">
+<script src="common.js"></script>
+<script>
+    //点击按钮，改变所有name属性值为name1的文本框中的value
+
+    my$("btn")
+    .onclick=function () {
+        var name1 = document.getElementsByName("name1");
+        for (let i = 0; i < name1.length; i++) {
+            name1[i].value="我很好";
+        }
+    }
+</script>
+
+</body>
+</html>

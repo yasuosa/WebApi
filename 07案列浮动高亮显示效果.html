@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*li:hover{*/
+            /*background-color: red;*/
+        /*}*/
+        ul{
+            list-style-type: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<ul id="uu">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+<script src="common.js"></script>
+<script>
+    //鼠标进入鼠标厉害
+    var lis = my$("uu").getElementsByTagName("li");
+    for (let i = 0; i < lis.length; i++) {
+        // 离开
+        lis[i].onmouseout=function () {
+            this.style.backgroundColor="";
+        };
+        // 进入
+        lis[i].onmouseover=function () {
+            this.style.backgroundColor="red";
+        };
+    }
+</script>
+
+</body>
+</html>

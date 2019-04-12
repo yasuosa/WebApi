@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+<input type="text" value="请输入搜素内容" id="txt">
+
+<script src="common.js"></script>
+<script>
+
+    var admin = my$("txt").value;
+    //获取文本框
+    //注册获取焦点的事件
+    my$("txt").onfocus = function () {
+        if (this.value == admin) {
+            this.value="";
+            this.style.color="black";
+        }
+    };
+
+    my$("txt").onblur = function () {
+        if(this.value.length==0){
+            this.value=admin;
+            this.style.color="gray";
+        };
+    }
+    //注册失去焦点的事件
+
+
+</script>
+</body>
+</html>

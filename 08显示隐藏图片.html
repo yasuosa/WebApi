@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 300px;
+            height: 300px;
+        }
+        .show{
+            display: block;
+        }
+
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="images/icon4.jpg" id="img1">
+    <img src="images/icon1.jpg" id="img2" class="hide"  >
+</div>
+<script src="common.js"></script>
+<script>
+    my$("img1").onmouseover=function () {
+        console.log("1");
+        // my$("img2").style.visibility="visible";
+        my$("img2").className="show";
+    };
+
+
+    my$("img1").onmouseout=function () {
+        console.log("2");
+        // my$("img2").style.visibility="hidden";
+        my$("img2").className="hide";
+    };
+</script>
+
+
+</body>
+</html>

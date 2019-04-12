@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            background-color: gray;
+        }
+
+        #imgsDiv img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="bg">
+    <p>美女相册</p>
+    <div id="imgsDiv">
+        <img src="images/icon1.jpg" alt="">
+        <img src="images/icon2.JPG" alt="">
+        <img src="images/icon3.jpg" alt="">
+        <img src="images/icon4.jpg" alt="">
+    </div>
+    <img title="暂无" id="imgBig">
+    <p id="txt">美女A</p>
+</div>
+
+<script src="common.js"></script>
+<script>
+    var txt=[
+        "美女A",
+        "美女B",
+        "美女C",
+        "美女D",
+    ];
+    var imgs = my$("imgsDiv").getElementsByTagName("img");
+    for (let i = 0; i < imgs.length; i++) {
+        imgs[i].onclick=function () {
+            my$("txt").innerText=txt[i];
+            my$("imgBig").src=imgs[i].src;
+        }
+    }
+</script>
+
+</body>
+</html>

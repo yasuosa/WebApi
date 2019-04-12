@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="images/bg1.jpg" id="a">
+    <img src="images/icon1.jpg" id="img1">
+</a>
+<img src="images/icon1.jpg" id="img">
+<script src="common.js"></script>
+<script>
+    my$("a").onclick=function () {
+        my$("img").src=my$("a").href;
+        return false;
+    }
+</script>
+
+</body>
+</html>
