@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            border:  1px solid red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="显示效果" id="btn">
+<input type="button" value="获取效果" id="btn2">
+<div id="dv">
+<p>22111</p>
+</div>
+
+<script src="common.js"></script>
+<script>
+
+    //总结：如果使用innerText主要是内容，设置标签内容，是没有标签效果的
+    //总结:innerHtml是可以设置内容
+    my$("btn")
+    .onclick=function () {
+        // my$("dv").innerText="哈哈";
+        my$("dv").innerHTML="<p>这个一个p</p>";
+    };
+
+    my$("btn2")
+    .onclick=function () {
+
+        //innerText 可以获取标签中的内容
+
+        console.log(my$("dv").innerText);
+        console.log(my$("dv").innerHTML);
+    }
+</script>
+</body>
+</html>

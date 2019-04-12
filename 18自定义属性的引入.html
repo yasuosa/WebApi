@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            list-style-type: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<ul id="uu">
+    <li score="11">1</li>
+    <li score="21">2</li>
+    <li score="31">3</li>
+    <li score="41">4</li>
+    <li score="51">5</li>
+</ul>
+<script src="common.js"></script>
+<script>
+
+    //html标签没有中的属性 ----自定义
+    var listLis = document.getElementsByTagName("li");
+    for (let i = 0; i < listLis.length; i++) {
+        listLis[i].onclick=function () {
+
+            //自定义属性不能直接取得值
+            //需要getAttribute(自定义名)
+            alert(this.getAttribute("score"));
+        };
+    }
+
+</script>
+</body>
+</html>

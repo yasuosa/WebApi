@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cls{
+            width: 200px;
+            height: 300px;
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="移除" id="btn">
+<div id="dv" score="10" class="cls">
+
+</div>
+<script src="common.js"></script>
+<script>
+    my$("btn")
+        .onclick=function () {
+        my$("dv").removeAttribute("score");
+        //也可以移除自带的属性
+        my$("dv").removeAttribute("class");
+    }
+</script>
+</body>
+</html>
