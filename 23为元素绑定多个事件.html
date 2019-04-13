@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn"/>
+<script src="common.js"></script>
+<script>
+    //为元素绑定事件（DOM)：y一种但 不兼容
+
+    //1 对象.addEventListener("事件类型",事件处理函数,false);
+    // IE8不支持
+
+    //为安妮绑定点击事件
+    //参数1:事件类型---事件名字 没有on
+    //参数2:事件处理函数------函授 (命名函数，匿名函数);
+    //参数3：布尔类型，目前就写false
+    // my$("btn").addEventListener("click",function () {
+    //     console.log("1");
+    // },false);
+    //
+    // my$("btn").addEventListener("click",function () {
+    //     console.log("2");
+    // },false);
+    //
+    // my$("btn").addEventListener("click",function () {
+    //     console.log("3");
+    // },false);
+    //
+    // my$("btn").addEventListener("click",function () {
+    //     console.log("4");
+    // },false);
+    //
+    // my$("btn").addEventListener("click",function () {
+    //     console.log("5");
+    // },false);
+
+
+    //参数2:事件类型-----事件名字有on
+    //参数2:事件处理函数--函数
+
+    my$("btn").attachEvent("onclick",function () {
+        //目前浏览器好像没这个了
+    });
+
+
+
+</script>
+</body>
+</html>

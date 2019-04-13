@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style-type: none;
+            cursor: pointer;
+        }
+        div{
+            width: 200px;
+            height: 400px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="创建列表" id="btn">
+<div id="dv">
+
+</div>
+<script src="common.js"></script>
+<script>
+    var names=[
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+    ];
+
+    my$("btn")
+        .onclick=function () {
+        var ulObj = document.createElement("ul");
+        my$("dv").appendChild(ulObj);
+        for (let i = 0; i < names.length; i++) {
+            var liObj = document.createElement("li");
+            liObj.innerText=names[i];
+            ulObj.appendChild(liObj);
+
+            //为li添加鼠标离开事件
+            liObj.onmouseout=mouseoutHandle;
+
+            liObj.onmouseover=mouseoverHandle;
+        }
+    };
+
+    function mouseoverHandle() {
+        this.style.backgroundColor="red";
+    }
+
+    function mouseoutHandle() {
+        this.style.backgroundColor="";
+    }
+
+</script>
+</body>
+</html>

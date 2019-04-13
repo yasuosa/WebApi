@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="dv">
+    <span>这是div中的第一个span标签</span>
+    <p>这是div中第二个元素，第一个p标签</p>
+    <ul id="uu">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+
+<script src="common.js"></script>
+<script>
+    var dvObj=my$("dv");
+
+    //获取里面的每个子节点
+
+    // for (let i = 0; i < dvObj.childNodes.length; i++) {
+    //     var node=dvObj.childNodes[i];
+    //     console.log(node.nodeValue+"====="+node.nodeName+"====="+node.nodeType);
+    // }
+
+
+    var node = dvObj.getAttributeNode("id");
+    console.log(node.nodeType+"====="+node.nodeName+"====="+node.nodeValue);
+
+    // console.log(dvObj.childNodes);//7个子节点
+    // console.log(dvObj.children);//3个子元素
+
+</script>
+</body>
+</html>

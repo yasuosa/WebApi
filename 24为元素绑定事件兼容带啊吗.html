@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="common.js"></script>
+
+<script>
+    function Person(name) {
+        this.name=name;
+        this.sayHi=function () {
+            console.log("hi");
+        }
+    }
+
+    var per=new Person("66");
+    per.sayHi();
+    per["sayHi"]();//这样也行哦
+
+
+    if(per.sayHi){
+        //不加框号
+        //判断这个对象中有没有这个方法
+        per.sayHi();
+    }else {
+        console.log("false");
+    }
+
+
+</script>
+</body>
+</html>

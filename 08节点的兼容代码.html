@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="uu">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+
+<script src="common.js"></script>
+<script>
+    //第一个节点和第一个元素获取的代码在ie8中不支持
+
+
+    //获取任意一个父级元素的第一个子级元素
+    function getFirstElmentChildByParentElement(element) {
+        if(element.firstElementChild){
+            return element.firstElementChild;
+        }else {
+            var node=element.firstChild;
+            while (node && node.nodeType!=1){
+                node=node.nextSibling;
+            }
+            return node;
+        }
+    }
+
+</script>
+</body>
+</html>

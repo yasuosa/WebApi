@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="变色" id="btn">
+<ul id="uu">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+<script src="common.js"></script>
+<script>
+    my$("btn")
+        .onclick=function () {
+        //方法一
+        // f1();
+
+        //方法二
+        f2();
+    };
+
+
+    function f2() {
+        var childNodes = my$("uu").childNodes;
+        var index=0;
+        for (let i = 0; i < childNodes.length; i++) {
+            if(childNodes[i].nodeType==1 && childNodes[i].nodeName=="LI"){
+                childNodes[i].style.backgroundColor=(index++%2==0?"red":"green");
+            }
+        }
+    }
+    function f1() {
+        var childNodes = my$("uu").children;
+        for (let i = 0; i < childNodes.length; i++) {
+            if(i%2==0){
+                childNodes[i].style.backgroundColor="red";
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

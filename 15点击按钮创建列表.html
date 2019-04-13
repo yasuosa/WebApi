@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv{
+            width: 300px;
+            height: 400px;
+            background-color: green;
+
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="创建列表" id="btn">
+<div id="dv">
+
+</div>
+<script src="common.js"></script>
+<script>
+    var names=["1",
+                "2",
+                "3",
+                "4",
+                "5",
+    "6"];
+
+    my$("btn")
+        .onclick=function () {
+        var str="<ul style='list-style-type: none;cursor: pointer'>";
+        for (let i = 0; i < names.length; i++) {
+            str+="<li>"+names[i]+"</li>"
+        }
+        str+="</ul>";
+        my$("dv").innerHTML=str;
+
+        var liObjs = my$("dv").getElementsByTagName("li");
+        console.log(liObjs.length);
+        for (let i = 0; i < liObjs.length; i++) {
+            liObjs[i].onmouseover=function () {
+                this.style.backgroundColor="red";
+            };
+            liObjs[i].onmouseout=function () {
+                this.style.backgroundColor="";
+            }
+        }
+    };
+
+    // my$("btn")
+    //     .onclick=function () {
+    //     my$("dv").innerHTML="<ul>" +
+    //                             "<li>1</li>" +
+    //                             "<li>2</li>" +
+    //                             "<li>3</li>" +
+    //                             "<li>4</li>" +
+    //                             "<li>5</li>" +
+    //                         "</ul>"
+    // }
+</script>
+</body>
+</html>
