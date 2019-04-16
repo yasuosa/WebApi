@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #dv1{
+            width: 300px;
+            height: 200px;
+            background-color: red;
+        }
+        #dv2{
+            width: 250px;
+            height: 150px;
+            background-color: green;
+        }
+
+        #dv3{
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div id="dv1">
+    <div id="dv2">
+        <div id="dv3"></div>
+    </div>
+</div>
+
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<script src="common.js"></script>
+<script>
+
+    //事件冒泡:多个元素嵌套，有层次关系,这些元素都注册了相同事件
+    //如果里面的元事件触发了，外面的元素的该事件自动的触发了
+    my$("dv1").onclick=function () {
+        console.log(this);
+    };
+
+    my$("dv2").onclick=function () {
+        console.log(this);
+        window.event.cancelBubble=true;
+    };
+
+
+    //事件处理参数对象
+    my$("dv3").onclick=function (event) {
+        console.log(this);
+        event.stopPropagation();
+    };
+
+
+    document.body.onclick=function () {
+        console.log("sb");
+    };
+
+    //对象.stopPropagation();
+
+    //如何阻止事件冒泡:window.event.cancelBubble=true;
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    #box {
+      width: 450px;
+      margin: 200px auto;
+    }
+
+    #txt {
+      width: 350px;
+    }
+
+    #pop {
+      width: 350px;
+      border: 1px solid red;
+    }
+
+    #pop ul {
+      margin: 0px;
+      padding: 0px;
+      width: 350px;
+      list-style-type: none;
+    }
+
+    #pop ul li {
+      width: 350px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="box">
+  <input type="text" id="txt" value="">
+  <input type="button" value="搜索" id="btn">
+
+</div>
+
+<script src="common.js"></script>
+<script>
+  var keyWords=[
+          "第1个",
+          "第2个",
+          "第3个",
+          "第4个",
+          "第5个",
+          "abc",
+          "abc123",
+          "abc1",
+          "abc2"
+  ];
+
+
+  //获取文本框注册键盘抬起事件
+  my$("txt").onkeyup=function () {
+    var text=this.value;
+    var keys=[];
+    keyWords.forEach(function (value) {
+      if(value.indexOf(text,0)==0){
+        keys.push(value);
+      }
+    });
+
+
+    if(this.value.length==0 || keys.length==0){
+      if(my$("pop")) {
+        my$("box").removeChild(my$("pop"));
+      }
+    }else {
+      if(my$("pop")) {
+        my$("box").removeChild(my$("pop"));
+      }
+      var divObj = document.createElement("div");
+      my$("box").appendChild(divObj);
+      divObj.setAttribute("id", "pop");
+      var ulObj = document.createElement("ul");
+      divObj.appendChild(ulObj);
+      keys.forEach(function (value) {
+        var liObj = document.createElement("li");
+        ulObj.appendChild(liObj);
+        liObj.innerText=value;
+        liObj.onmouseover=function () {
+          this.style.backgroundColor="red";
+        };
+        liObj.onmouseout=function () {
+          this.style.backgroundColor="";
+        };
+      });
+
+      // for (let i = 0; i < keys.length; i++) {
+      //   var liObj = document.createElement("li");
+      //
+      // }
+    }
+  }
+</script>
+
+
+</body>
+</html>

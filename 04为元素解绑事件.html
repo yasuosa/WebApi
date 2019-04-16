@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<input type="button" value="按钮" id="btn">
+<input type="button" value="干掉第一个按钮" id="btn2">
+<script src="common.js"></script>
+<script>
+
+    //1对象.on事件名字=事件函数
+    // my$("btn").onclick=function () {
+    //     console.log("1");
+    // };
+    //
+    // my$("btn2").onclick=function () {
+    //     my$("btn").onclick=null;
+    // };
+
+
+    // function f1(){
+    //     console.log("第一个");
+    // }
+    // my$("btn").addEventListener("click",f1,false);
+    // my$("btn").addEventListener("click",function () {
+    //     console.log("第二个");
+    // },false);
+    //
+    // my$("btn2").onclick=function () {
+    //     my$("btn").removeEventListener("click",f1,false);
+    // };
+
+
+
+
+
+    //解绑事件：
+    /**
+     * 注意：用什么方式绑定事件，就应该用对应的方式解绑事件
+     * 1.解绑事件
+     * 对象.on事件名字=事件处理函数-->绑定事件
+     * 对象.on事件名字=null
+     *
+     * 2.解绑事件
+     * 对象.removeEventListener("没有on的事件类型",命名函数,false);
+     *
+     */
+
+</script>
+
+</body>
+</html>
