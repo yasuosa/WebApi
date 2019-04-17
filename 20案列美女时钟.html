@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="" id="im">
+<script src="common.js"></script>
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<script>
+    function f1() {
+        var dt=new Date();
+        //获取小时
+        var  hour=dt.getHours();
+        //获取秒
+        var second=dt.getSeconds();
+
+        hour=hour<10?"0"+hour:hour;
+        second=second<10?"0"+second:second;
+        console.log(hour+"+++"+second);
+
+        my$("im").src="meimei/"+hour+"_"+second+".jpg";
+    }
+
+    f1();
+    //页面加载完毕后。过了1秒才执行代码
+    setInterval(f1,1000);
+</script>
+</body>
+</html>

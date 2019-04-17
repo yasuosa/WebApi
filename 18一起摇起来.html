@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 300px;
+            height: 200px;
+        }
+
+        div{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="摇起来" id="btn">
+<input type="button" value="停止" id="btn2">
+<div id="dv">
+    <img src="images/11.jpg">
+    <img src="images/12.jpg">
+</div>
+
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<script src="common.js"></script>
+<script>
+
+    var timeId=null;
+    addEventListener(my$("btn"),"click",function () {
+        // console.log("1");
+        timeId=setInterval(function () {
+            my$("dv").style.top=Math.floor(Math.random()*100)+"px";
+            my$("dv").style.left=Math.floor(Math.random()*100)+"px";
+        },100);
+    });
+
+    addEventListener(my$("btn2"),"click",
+    function () {
+        if(timeId!=null){
+            clearInterval(timeId);
+        }else {
+            alert("你还未启动");
+        }
+    });
+
+
+
+    // addEventListener(my$("dv"),"mouseover",function () {
+    //     timeId=setInterval(function () {
+    //         my$("dv").style.top=Math.floor(Math.random()*100)+"px";
+    //         my$("dv").style.left=Math.floor(Math.random()*100)+"px";
+    //     },100);
+    // });
+    //
+    // addEventListener(my$("dv"),"mouseout",function () {
+    //     if(timeId!=null)
+    //     clearInterval(timeId);
+    // });
+</script>
+
+</body>
+</html>

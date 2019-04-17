@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<input type="button" value="清理" id="btn">
+<script>
+    //在bom中有两个定时器---计时器
+
+    //定时器
+    //参数一：函数
+    //参数二：毫秒
+
+    var time=window.setInterval(function () {
+        alert("11");
+    },5000);
+
+    document.getElementById("btn")
+        .onclick=function () {
+        clearInterval(time);
+    }
+</script>
+
+
+
+
+</body>
+</html>

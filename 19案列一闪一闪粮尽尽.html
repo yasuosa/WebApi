@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 600px;
+            height: 600px;
+            border: 2px solid yellow;
+            background-color: black;
+            position: relative;
+        }
+
+        span{
+            position: absolute;
+            font-size: 30px;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="亮起来" id="btn">
+<div id="dv">
+
+</div>
+<script src="common.js"></script>
+<script>
+    addEventListener(my$("btn"),"click",function () {
+        setInterval(function () {
+            my$("dv").innerHTML+="<span>⭐</span>";
+            for (let i = 0; i < my$("dv").children.length; i++) {
+                my$("dv").children[i].style.left=Math.random()*600+"px";
+                my$("dv").children[i].style.top=Math.random()*600+"px";
+            }
+        },100);
+    });
+</script>
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+
+</body>
+</html>

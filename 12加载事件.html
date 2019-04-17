@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<script>
+    //页面加载到时候 按钮还没出现，页面没有加载完毕
+
+    //页面加载完毕了，在获取按钮
+    //只要页面加载玩不，这个事件就会触发
+    //页面中所有的内容
+
+
+    //很重要
+    // window.onload=function(){
+    //     document.getElementById("btn")
+    //         .onclick=function () {
+    //         alert("111");
+    //     };
+    // };
+
+    //扩展事件 *---页面关闭后才触发的事件
+    window.onunload=function () {
+        alert("111");
+    };
+    //扩展事件 *---页面关闭之前才触发的事件
+    window.onbeforeunload=function () {
+        alert("2222");
+    };
+
+</script>
+<input type="button" value="按钮" id="btn">
+</body>
+</html>
