@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0 ;
+        }
+        div{
+            width: 200px;
+            height: 150px;
+            background-color: red;
+            border-radius: 25px;
+            transition: width 1s;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="变宽" id="btn">
+<div id="dv"></div>
+
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<script src="common.js"></script>
+<script>
+    addEventListener(my$("btn"),"click",
+    function () {
+        var timeId=setInterval(function () {
+            var width=my$("dv").offsetWidth;
+            if(width>1000){
+                clearInterval(timeId);
+            }else{
+                width+=100;
+                my$("dv").style.width=width+"px";
+            }
+
+        },200);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            background-color: hotpink;
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="dv"></div>
+<input id="btn" value="渐变" type="button">
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<script src="common.js"></script>
+<script>
+
+    addEventListener(my$("btn"),"click",function () {
+        var opacity=10;
+        setInterval(function () {
+            opacity--;
+            if(opacity<=0){
+                clearInterval(timeId);
+            }
+            my$("dv").style.opacity=opacity/10;
+        },200);
+    });
+</script>
+</body>
+</html>
