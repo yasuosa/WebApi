@@ -56,7 +56,9 @@
 
 
     function animate(element,target) {
-        var timeId=setInterval(function () {
+
+        clearInterval(element.timeId);
+        element.timeId=setInterval(function () {
             var current=element.offsetLeft;
             var step=9;
             step=current<target?step:-step;
@@ -65,7 +67,7 @@
             if(Math.abs(target-current)>= Math.abs(step)){
                 element.style.left=current+"px";
             }else {
-                clearInterval(timeId)
+                clearInterval(element.timeId);
                 element.style.left=target+"px";
             }
         },20);

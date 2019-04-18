@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        input{
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+        #dv1{
+            width: 200px;
+            height: 150px;
+            background-color: red;
+        }
+        #dv2{
+            width: 100px;
+            height: 50px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<div id="dv1">
+
+</div>
+<div id="dv2">
+
+</div>
+<input type="button" id="btn" value="显示效果">
+<script src="common.js"></script>
+<script>
+    /**
+     * 三个大的系列
+     * 1.offset系列中的熟悉感
+     *
+     *
+     */
+
+    //红色div的宽和高
+
+
+    /**
+     * 没有脱离文档流
+     *
+     * offsetLeft :父级元素margin+父级元素padding+父级元素的border+自己的margin
+     *
+     *
+     * 脱离文档流
+     * 主要是自己的left 和自己的margin
+     */
+
+    my$("btn")
+        .onclick=function () {
+        //在style标签中设置的样式属性 获取不到
+        //在style属性中设置样式属性可以获取
+        console.log(this.offsetWidth);
+        console.log(this.offsetHeight);
+        console.log(this.offsetLeft);
+        console.log(this.offsetTop);
+    }
+</script>
+</body>
+</html>

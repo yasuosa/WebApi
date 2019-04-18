@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+<img src="images/tianshi.gif" alt="" id="img">
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<script src="common.js"></script>
+<script>
+    /**
+     * 鼠标在页面中移动
+     * 图片跟着鼠标移动
+     */
+
+    document.onmousemove=function (e) {
+        console.log(e);
+        var width=my$("img").offsetWidth;
+        var height=my$("img").offsetHeight;
+
+        //clientX clientY可视区域的横坐标纵坐标
+        my$("img").style.left=e.clientX-width/2+"px";
+        my$("img").style.top=e.clientY-height/2+"px";
+    };
+</script>
+</body>
+</html>
