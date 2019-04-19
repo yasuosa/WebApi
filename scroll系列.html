@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            width: 300px;
+            height: 200px;
+            border: 2px solid red;
+            overflow: auto;
+        }
+
+        input{
+            left: 330px;
+            position: absolute;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="dv">
+   我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是
+    猪我是猪我是猪我是猪我
+    猪我是猪我是猪我是猪我是
+    猪我是猪我是猪我是猪我是猪我
+    是猪我是猪我是猪
+    我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪
+    我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪我是猪
+    我是猪我是猪我是猪我是猪我是猪我是猪
+</div>
+<input type="button" id="btn" value="显示效果">
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<script src="common.js"></script>
+<script>
+    /**
+     *
+     * offset系列
+     * offsetWidth:元素的 有边框
+     * offsetHeight:元素的高 有边框
+     * offsetLeft:元素距离左边位置的值
+     * offsetTop:元素距离上面的位置的值
+     * 
+     * scroll系列:卷曲
+     * scrollLeft:想左卷曲出去的距离
+     * scrollTop:想上卷曲出去的距离
+     * scrollWidth:元素中内容的的宽 （内容少或没有 就是元素的宽)
+     * scrollHeight:元素中内容的的高 （内容少或没有 就是元素的高)
+     *
+     *
+     * scrollWidth 元素中内容的实际的宽（没有边框),如果没有内容就是元素的宽
+     * scrollHeight 元素中内容的实际的高（没有边框),如果没有内容就是元素的高
+     *
+     *
+     *
+     */
+    
+    my$("btn").onclick=function () {
+        // console.log(my$("dv").offsetWidth);
+        // console.log(my$("dv").scrollWidth);//元素中内容的实际的高
+
+        console.log(my$("dv").scrollTop);//向上卷曲出去的距离
+    }
+
+    my$("dv").onscroll=function () {
+      console.log(this.scrollTop);
+    };
+
+
+</script>
+</body>
+</html>

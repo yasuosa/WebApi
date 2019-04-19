@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: green;
+            position: absolute;
+            left: 0;
+            top: 0px;
+        }
+        input{
+            z-index: 10;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="移动到400px" id="btn1">
+<div id="dv">
+
+</div>
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<script src="common.js"></script>
+<script>
+
+    /**
+     * 当前的元素的这个属性要达到的目标的值
+     * @param element
+     * @param attr
+     * @param target
+     */
+
+
+    //层级 zIndex
+    //透明度 数字类型 ----小数
+    //json={"zIndex":1000,"opacity":0.2}
+    function animate(element,json,fn) {
+        clearInterval(element.timeId);
+        element.timeId=setInterval(function () {
+
+            var flag=true;
+
+            for (var key in json){
+
+                //判断这个属性attr中是不是opacity
+                if(key=="opacity"){
+                    //当前透明度放大100
+                    var current=getStyle(element,key)*100;
+                    //目标放大100
+                    var target=json[key]*100;
+                    var step=(target-current)/10;
+                    step=step>0?Math.ceil(step):Math.floor(step);
+                    current+=step;
+                    element.style[key]=current/100;
+                }else if(key=="zIndex"){//判断这个属性attr中是不是zIndex
+                    element.style[key]=json[key];
+                }else {
+                    var current=parseInt(getStyle(element,key));
+                    var target=json[key];
+                    var step=(target-current)/10;
+                    step=step>0?Math.ceil(step):Math.floor(step);
+                    current+=step;
+                    element.style[key]=current+"px";
+                }
+
+
+                if(current!=target){
+                    flag=false;
+                }
+            }
+
+            if(flag){
+                clearInterval(element.timeId);
+                if(fn){
+                    fn();
+                }
+            }
+
+        },20);
+    }
+
+
+
+
+    function getStyle(element,attr) {
+        return window.getComputedStyle?
+            window.getComputedStyle(element,null)[attr]:
+            element.currentStyle[attr];
+    }
+</script>
+<script>
+    my$("btn1").onclick=function () {
+        // var json={
+        //     width:800,
+        //     height:400,
+        //     left:500,
+        //     top:600
+        // };
+        // animate(my$("dv"),json);
+
+        var json={"width":800,"height":400,"left":500,"top":200
+        ,"opacity":0.2};
+
+        var json1={"width":80,"height":40,"left":0,"top":0
+            ,"opacity":0.8,"zIndex":100};
+        animate(my$("dv"),json,function () {
+            animate(my$("dv"),json1)
+        });
+
+
+
+    };
+
+    // window.onkeydown=function (ev) {
+    //     console.log(ev.code);
+    // }
+
+
+
+
+
+
+</script>
+</body>
+</html>

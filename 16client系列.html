@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 10px solid red;
+            border-left-width: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="dv">
+
+</div>
+<script src="common.js"></script>
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<script>
+    /**
+     * offset系列
+     * offsetWidth:元素的 有边框
+     * offsetHeight:元素的高 有边框
+     * offsetLeft:元素距离左边位置的值
+     * offsetTop:元素距离上面的位置的值
+     *
+     * scroll系列:卷曲
+     * scrollLeft:想左卷曲出去的距离
+     * scrollTop:想上卷曲出去的距离
+     * scrollWidth:元素中内容的的宽 （内容少或没有 就是元素的宽)
+     * scrollHeight:元素中内容的的高 （内容少或没有 就是元素的高)
+     *
+     *
+     *
+     * client系列可视区域
+     * clientWidth 可是区域的宽 (没有边框 边框内)
+     * clientHeight 可是区域的高(没有边框 边框内)
+     * clientLeft 左边框的宽度
+     * clientTop 上边框的宽度
+     */
+
+    console.log(my$("dv").clientTop)
+</script>
+</body>
+</html>

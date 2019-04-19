@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            position: absolute;
+
+        }
+
+        body{
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+<img src="images/tianshi.gif" id="img">
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<script src="common.js"></script>
+<script>
+
+
+    //谷歌和火狐中都有 但ie8中没有
+    //在ie中用 windo.event
+    document.onmousemove=function (ev) {
+
+        console.log(ev.screenY);
+        ev=window.event||ev;
+
+        //pageX相对于页面顶部的坐标（IE8用不了)
+        my$("img").style.left=ev.pageX+"px";
+        my$("img").style.top=ev.pageY+"px";
+    };
+</script>
+</body>
+</html>

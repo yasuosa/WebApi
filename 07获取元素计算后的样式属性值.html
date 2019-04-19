@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: powderblue;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="显示效果" id="btn">
+<div id="dv"></div>
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<script src="common.js"></script>
+<script>
+
+    function getStyle(element,attr) {
+        //判断浏览器支不支持
+        return window.getComputedStyle?
+            window.getComputedStyle(element,null)[attr]
+            :element.currentStyle[attr];
+    }
+
+    my$("btn").onclick=function () {
+        //获取元素距离左边位置的值
+        // console.log(this.offsetLeft);
+
+
+        //获取css样式来获取left的值
+        console.log(getStyle(my$("dv"),"top"));
+
+        //ie8脑残写法
+    };
+
+    // //获取任意一个元素的任意个样式属性的值
+    // function getStyle(element,attr) {
+    //     //判断浏览器支不支持
+    //     if(window.getComputedStyle){
+    //         return window.getComputedStyle(element,null)[attr];
+    //     }else {
+    //         return element.getcurrentStyle[attr];
+    //     }
+    // }
+
+
+    //获取任意一个元素的任意个样式属性的值
+
+</script>
+</body>
+</html>
