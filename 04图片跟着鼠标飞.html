@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 2000px;
+        }
+        img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<img src="images/bird.png" alt="" id="i">
+<script src="conmmon.js"></script>
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<script>
+    var obj={
+        sayHi:function () {
+            this.eat();
+            console.log("2");
+        },
+        eat:function () {
+            console.log("21");
+        }
+    };
+
+    //调用sa'y'Hi方法中调用eat
+    obj.sayHi();
+    document.onmousemove=function (e) {
+        my$("i").style.left=e.clientX+"px";
+        my$("i").style.top=e.clientY+"px";
+
+
+        //因为ie8流浪器中正对事件对象使用的是window.event
+    }
+
+    //window.event和事件参数e兼容
+    //client X和ClientY单独使用
+    //scrollLeft和scrollTop兼容代码
+    //pageX pageY和clientX+scrollLeft
+
+
+
+    //把代码放在一个对象中
+
+    var evt={
+        getEvent:function (e) {
+            return window.event||e;
+        },
+
+        getClientX:function (e) {
+            return this.getEvent(e).clientX;
+        },
+
+        getClientY:function (e) {
+            return this.getEvent(e).clientY;
+        },
+
+        //页面向左卷曲的出去的横坐标
+        getScrollLeft:function () {
+           return window.pageXOffset||document.body.scrollLeft
+           ||document.documentElement.scrollLeft||0;
+        },
+
+        getScrollTop:function () {
+           return window.pageYOffset||document.documentElement.scrollTop
+           ||document.body.scrollTop||0;
+        },
+
+        getPageX:function (e) {
+            return this.getEvent(e).pageX?
+                this.getEvent(e).pageX:
+                this.getClientX(e)+this.getScrollLeft(e);
+
+        },
+
+        getPageY:function (e) {
+            return this.getEvent(e).pageY?
+                this.getEvent(e).pageY:
+                this.getClientY(e)+this.getScrollTop(e);
+        }
+    };
+
+
+    document.onmousemove=function(e){
+        my$("i").style.left=evt.getPageX(e)+"px";
+        my$("i").style.top=evt.getPageY(e)+"px";
+    };
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<img src="images/bird.png" alt="" id="i">
+<script src="conmmon.js"></script>
+<!--现在遇到的逆境 都是以后成长的额阶梯-->
+<script>
+    // document.onmousemove=function (e) {
+    //     my$("i").style.left=e.clientX+"px";
+    //     my$("i").style.top=e.clientY+"px";
+    //
+    //
+    //     //因为ie8流浪器中正对事件对象使用的是window.event
+    // };
+
+    function getScroll() {
+        return {
+            left:window.pageXOffset||
+                    document.documentElement.scrollLeft||
+                    document.body.scrollLeft||0,
+            top:window.pageYOffset||
+                    document.documentElement.scrollTop||
+                    document.body.scrollTop||0;
+        }
+    }
+
+
+    //可视区域横坐标+向左卷曲出去的恒左边
+
+    my$("im").style.left=window.event.clientX+getScroll()[0];
+    my$("im").style.top=window.event.clientY+getScroll()[1];
+
+</script>
+</body>
+</html>
