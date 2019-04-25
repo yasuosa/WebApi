@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+</head>
+<body>
+<table id="tb" border="1">
+  <tbody id="tbd">
+  <tr>
+    <td>猪猪:</td>
+    <td>我喜欢吃肉</td>
+  </tr>
+  </tbody>
+</table>
+<div>
+  昵称:<input type="text" value="" id="userName"/><br/>
+  <textarea name="" id="tt" cols="30" rows="10"></textarea><br/>
+  <input type="button" value="评论一下" id="btn"/><br/>
+</div>
+<script src="conmmon.js"></script>
+<script>
+
+  my$("btn").onclick=function () {
+     var trObj=document.createElement("tr");
+     var tdObj1=document.createElement("td");
+     var tdObj2=document.createElement("td");
+     tdObj1.innerText=my$("userName").value;
+     tdObj2.innerText=my$("tt").value;
+     trObj.appendChild(tdObj1);
+     trObj.appendChild(tdObj2);
+     my$("tbd").appendChild(trObj);
+     my$("userName").value="";
+     my$("tt").value="";
+  }
+
+</script>
+
+</body>
+</html>

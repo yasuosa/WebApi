@@ -60,56 +60,101 @@
 <!--导入外部的js文件-->
 <script src="common.js"></script>
 <script>
-    //获取需要的元素
-    var box = my$("box");
-    //获取小图的div
-    var small = box.children[0];
-    var mask = small.children[1];
-    //获取大图的div
-    var big = box.children[1];
-    var imgBig=big.children[0];
+    // //获取需要的元素
+    // var box = my$("box");
+    // //获取小图的div
+    // var small = box.children[0];
+    // var mask = small.children[1];
+    // //获取大图的div
+    // var big = box.children[1];
+    // var imgBig=big.children[0];
+    //
+    //
+    // //鼠标进入显示遮挡层和大图div
+    // box.onmouseover = function () {
+    //     mask.style.display = "block";
+    //     big.style.display = "block";
+    // };
+    // //鼠标离开隐藏
+    // box.onmouseout = function () {
+    //     mask.style.display = "none";
+    //     big.style.display = "none";
+    // };
+    //
+    // small.onmousemove = function (e) {
+    //     var x = e.clientX - mask.offsetWidth / 2;
+    //     var y = e.clientY - mask.offsetHeight / 2;
+    //     //为遮挡层的left和top赋值
+    //
+    //
+    //     x = x - 100;
+    //     y = y - 100;
+    //     //横坐标的最小值
+    //     x = x < 0 ? 0 : x;
+    //     //纵坐标的最小值
+    //     y = y < 0 ? 0 : y;
+    //
+    //
+    //     //横坐标的最大值
+    //     x = x > small.offsetWidth - mask.offsetWidth ? small.offsetWidth - mask.offsetWidth : x;
+    //     y = y > small.offsetHeight - mask.offsetHeight ? small.offsetHeight - mask.offsetHeight : y;
+    //
+    //     // if((x>mask.offsetWidth/2 && x<this.offsetWidth-mask.offsetWidth/2)
+    //     // && (y>mask.offsetHeight/2 && y<this.offsetHeight-mask.offsetHeight/2)) {
+    //     mask.style.left = x + "px";
+    //     mask.style.top = y + "px";
+    //
+    //     var dx = x * (imgBig.offsetWidth-big.offsetWidth) / (small.offsetWidth-mask.offsetWidth) ;
+    //     var dy = y  * (imgBig.offsetHeight-big.offsetHeight)/ (small.offsetHeight-mask.clientHeight);
+    //     imgBig.style.left = -dx + "px";
+    //     imgBig.style.top = -dy + "px";
+    //
+    // };
+
+</script>
+
+<script>
+    var box=my$("box");
+    var small=box.children[0];
+    var mask=small.children[1];
+    var big=box.children[1];
+    var bigImg=big.children[0];
 
 
-    //鼠标进入显示遮挡层和大图div
-    box.onmouseover = function () {
-        mask.style.display = "block";
-        big.style.display = "block";
+
+    box.onmouseover=function () {
+      mask.style.display="block";
+      big.style.display="block";
     };
-    //鼠标离开隐藏
-    box.onmouseout = function () {
-        mask.style.display = "none";
-        big.style.display = "none";
+
+    box.onmouseout=function () {
+        mask.style.display="none";
+        big.style.display="none";
     };
 
-    small.onmousemove = function (e) {
-        var x = e.clientX - mask.offsetWidth / 2;
-        var y = e.clientY - mask.offsetHeight / 2;
-        //为遮挡层的left和top赋值
+    small.onmousemove=function (e) {
+        var x=e.clientX-100-mask.offsetWidth/2;
+        var y=e.clientY-100-mask.offsetHeight/2;
+
+        console.log(small.offsetHeight);
+        x=x<0?0:x;
+        x=x>small.offsetWidth-mask.offsetWidth?small.offsetWidth-mask.offsetWidth:x;
+
+        y=y<0?0:y;
+        y=y>small.offsetHeight-mask.offsetHeight?small.offsetHeight-mask.offsetHeight:y;
 
 
-        x = x - 100;
-        y = y - 100;
-        //横坐标的最小值
-        x = x < 0 ? 0 : x;
-        //纵坐标的最小值
-        y = y < 0 ? 0 : y;
+        mask.style.left=x+"px";
+        mask.style.top=y+"px";
 
 
-        //横坐标的最大值
-        x = x > small.offsetWidth - mask.offsetWidth ? small.offsetWidth - mask.offsetWidth : x;
-        y = y > small.offsetHeight - mask.offsetHeight ? small.offsetHeight - mask.offsetHeight : y;
+        var dx=x * (bigImg.offsetWidth-big.offsetWidth )/(small.offsetWidth-mask.offsetWidth) ;
+        var dy=y * (bigImg.offsetHeight-big.offsetHeight) /(small.offsetHeight -mask.offsetHeight) ;
 
-        // if((x>mask.offsetWidth/2 && x<this.offsetWidth-mask.offsetWidth/2)
-        // && (y>mask.offsetHeight/2 && y<this.offsetHeight-mask.offsetHeight/2)) {
-        mask.style.left = x + "px";
-        mask.style.top = y + "px";
-
-        var dx = x * (imgBig.offsetWidth-big.offsetWidth) / (small.offsetWidth-mask.offsetWidth) ;
-        var dy = y  * (imgBig.offsetHeight-big.offsetHeight)/ (small.offsetHeight-mask.clientHeight);
-        imgBig.style.left = -dx + "px";
-        imgBig.style.top = -dy + "px";
-
+        bigImg.style.left=-dx+"px";
+        bigImg.style.top=-dy+"px";
     };
+
 
 </script>
 
